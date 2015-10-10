@@ -1,6 +1,6 @@
 (function() {
   'use strict';
 
-  angular.module('cloudbrain.publishers', []);
+  angular.module('cloudbrain.publishers', ['ngMaterial', 'ngMessages']);
 
 })();

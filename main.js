@@ -11,6 +11,9 @@ var BrowserWindow = require('browser-window');
 // Report crashes to our server.
 require('crash-reporter').start();
 
+// Developer Tools / Inspector
+require('electron-debug')();
+
 var mainWindow = null;
 var options = {
 	"debug": true,

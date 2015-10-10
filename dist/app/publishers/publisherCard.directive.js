@@ -6,14 +6,19 @@
 
   function publisherCard() {
 
-    function link() {
-
+    function link(scope) {
+      scope.device = {
+        id: '',
+        name: 'Muse',
+        type: 'muse'
+      };
     }
 
     return {
       scope: {},
       restrict: 'E',
-      template: '<h1>Publisher Card</h1>',
+      replace: true,
+      templateUrl: '../dist/app/publishers/publisherCard.html',
       link: link
     };
   }

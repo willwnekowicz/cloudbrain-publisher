@@ -3,20 +3,39 @@
   <head>
     <title>Cloudbrain Publisher</title>
     <!-- bower:css -->
-    <link rel="stylesheet" href="../dist/vendor/skeleton/css/skeleton.css" />
+    <link rel="stylesheet" href="../dist/vendor/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="../dist/css/style.css">
   </head>
   <body>
+    <md-toolbar class="shadow-z-2">
+      <div class="md-toolbar-tools">
+        <h2 class="md-display-2">
+            <a href="" class="hc-title">
+              <img src="../dist/images/brain-white.png" alt="cloudbrain" class="logo" />
+                Cloudbrain
+            </a>
+        </h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
 
-    <h1>Cloudbrain</h1>
-    <publisher-card></publisher-card>
+    <div layout="row">
+      <publisher-card></publisher-card>
+      <publisher-card></publisher-card>
+    </div>
     <!-- REQUIRED -->
     <script src="../jspm_packages/system.js"></script>
     <script src="../config.js"></script>
     <!-- bower:js -->
+    <script src="../dist/vendor/angular/angular.js"></script>
     <script src="../dist/vendor/angularjs/angular.js"></script>
+    <script src="../dist/vendor/angular-animate/angular-animate.js"></script>
+    <script src="../dist/vendor/angular-aria/angular-aria.js"></script>
+    <script src="../dist/vendor/angular-material/angular-material.js"></script>
+    <script src="../dist/vendor/angular-messages/angular-messages.js"></script>
+    <script src="../dist/vendor/angular-mocks/angular-mocks.js"></script>
     <!-- endbower -->
     <script src="../dist/js/app.js"></script>
     <script src="../dist/app/publishers/publisherCard.directive.js"></script>

@@ -1,0 +1,28 @@
+<div class="publisherCard" flex="50">
+  <md-content class="md-padding">
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title">{{device.name}}</h2>
+        <form name="deviceSettingsForm">
+          <md-input-container>
+            <label>DeviceID</label>
+            <input name="deviceID" type="text"
+                   ng-model="device.id"
+                   required
+                   md-maxlength="10">
+            <div ng-messages="deviceSettingsForm.deviceID.$error"
+                 ng-show="deviceSettingsForm.deviceID.$dirty">
+              <div ng-message="required"
+                   ng-if="deviceSettingsForm.deviceID.$touched">
+                   This is required!</div>
+              <div ng-message="md-maxlength">That's too long!</div>
+            </div>
+          </md-input-container>
+        </form>
+      </md-card-content>
+      <div class="md-actions" layout="row" layout-align="end center">
+        <md-button class="md-raised md-primary">Publish</md-button>
+      </div>
+    </md-card>
+  </md-content>
+</div>
