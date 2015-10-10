@@ -32,7 +32,7 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-  mainWindow = new BrowserWindow({width: 800, height: 450});
+  mainWindow = new BrowserWindow({width: 800, height: 450, frame: false});
   mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
   if(options.debug) { mainWindow.openDevTools(); }
   mainWindow.on('closed', function() { mainWindow = null; });

@@ -8,3 +8,6 @@ html, body {
 	height: 100%;
 	background: #AAA;
 }
+
+body { -webkit-app-region: drag; }
+button { -webkit-app-region: no-drag; }
