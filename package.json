@@ -1,7 +1,7 @@
 {
-  "name": "electron-angular-boilerplate",
-  "version": "1.4.0",
-  "description": "A basic electron app using AngularJS and Skeleton CSS with ES6 support",
+  "name": "cloudbrain-publisher",
+  "version": "0.0.0",
+  "description": "A GUI for Cloudbrain Publishers",
   "engines": {
     "node": "<0.12"
   },
@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Stephn-R/Electron-Boilerplate.git"
+    "url": ""
   },
   "keywords": [],
-  "author": "steprodriguez10@gmail.com",
-  "license": "MIT",
+  "author": "william.wnekowicz@gmail.com",
+  "license": "AGPLv3",
   "bugs": {
-    "url": "https://github.com/Stephn-R/Electron-Boilerplate/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/Stephn-R/Electron-Boilerplate",
+  "homepage": "",
   "devDependencies": {
     "babel": "^5.6.14",
     "babel-jest": "^5.3.0",
@@ -54,7 +54,6 @@
     "jquery": "^2.1.4"
   },
   "jspm": {
-    "directories": {},
     "dependencies": {},
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
