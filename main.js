@@ -3,6 +3,9 @@
 var _ = require('lodash');
 var app = require('app');
 var path = require('path');
+var ipc = require('ipc');
+var spawn = require('child_process').spawn;
+var child;
 var BrowserWindow = require('browser-window');
 
 // ####################################################
@@ -39,6 +42,17 @@ app.on('ready', function() {
   mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
   if(options.debug) { mainWindow.openDevTools(); }
   mainWindow.on('closed', function() { mainWindow = null; });
+
+	ipc.on('publish-device', function (event, device) {
+	  var cmd = 'cloudbrain';
+		var args = 'publish --mock -n ' + device.type + ' -i ' + device.id;
+		console.log('Starting child process:', cmd + ' ' + args);
+	  child = spawn(cmd, args.split(' '), {stdio: 'pipe'});
+		console.log('PID: ', child.pid);
+		child.stdout.on('close', function(){
+			console.log('Child process closed. PID: ', child.pid);
+		});
+	});
 });
 
 // ############################################################################################
