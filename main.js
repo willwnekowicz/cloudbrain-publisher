@@ -7,6 +7,21 @@ var ipc = require('ipc');
 var spawn = require('child_process').spawn;
 var child;
 var BrowserWindow = require('browser-window');
+var express = require('express');
+var expressApp = express();
+
+expressApp.use('/dist', express.static(__dirname + '/dist'));
+expressApp.use('/', express.static(__dirname + '/views'));
+
+expressApp.use(express.static(__dirname));
+
+var server = expressApp.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Cloudbrain listening at http://%s:%s', host, port);
+});
+
 
 // ####################################################
 // ####################################################
@@ -39,7 +54,8 @@ app.on('window-all-closed', function() {
 
 app.on('ready', function() {
   mainWindow = new BrowserWindow({width: 800, height: 450, frame: false});
-  mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
+	// mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
+  mainWindow.loadUrl('http://localhost:3000');
   if(options.debug) { mainWindow.openDevTools(); }
   mainWindow.on('closed', function() { mainWindow = null; });
 

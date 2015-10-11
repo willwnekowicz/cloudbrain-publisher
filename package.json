@@ -53,6 +53,7 @@
   "dependencies": {
     "electron-debug": "^0.2.1",
     "electron-prebuilt": "^0.33.7",
+    "express": "^4.13.3",
     "jquery": "^2.1.4"
   },
   "jspm": {
